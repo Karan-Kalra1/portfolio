@@ -1,0 +1,59 @@
+
+---
+import type { Project } from '../data/projects';
+
+const { project } = Astro.props as { project: Project };
+const cover = project.media[0];
+---
+
+<a class="project-card" href={`/projects/${project.slug}`}>
+  <div class="project-card-media">
+    {project.coverImage ? (
+      <img
+        src={project.coverImage.src}
+        alt={project.coverImage.alt}
+        loading="lazy"
+      />
+    ) : cover ? (
+      cover.type === 'video' ? (
+        <video
+          src={cover.src}
+          muted
+          autoplay
+          loop
+          playsinline
+        />
+      ) : cover.type === 'embed' ? (
+        <div class="media-fallback">
+          <span>↗</span>
+          <small>Interactive media</small>
+        </div>
+      ) : (
+        <img src={cover.src} alt={cover.alt} loading="lazy" />
+      )
+    ) : (
+      <div class="media-fallback">
+        <span>↗</span>
+        <small>Play in browser</small>
+      </div>
+    )}
+
+    <span class="project-card-index">{project.category}</span>
+    <span class="project-card-arrow" aria-hidden="true">↗</span>
+  </div>
+
+  <div class="project-card-copy">
+    <div class="project-card-heading">
+      <h3>{project.title}</h3>
+      <span>{project.year}</span>
+    </div>
+
+    <p>{project.shortDescription}</p>
+
+    <div class="tag-list">
+      {project.tech.slice(0, 4).map((tech) => (
+        <span class="tag">{tech}</span>
+      ))}
+    </div>
+  </div>
+</a>

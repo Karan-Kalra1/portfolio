@@ -1,11 +1,13 @@
 ---
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 const currentPath = Astro.url.pathname;
 
 const links = [
-  { href: `${import.meta.env.BASE_URL}`, label: 'Projects' },
-  { href: `${import.meta.env.BASE_URL}about/`, label: 'About' },
-  { href: `${import.meta.env.BASE_URL}contact/`, label: 'Contact' },
+  { href: `${base}`, label: 'Projects' },
+  { href: `${base}about/`, label: 'About' },
+  { href: `${base}contact/`, label: 'Contact' },
 ];
 ---
 
@@ -35,7 +37,7 @@ const links = [
       ))}
     </nav>
 
-    <a class="nav-cta" href={`${import.meta.env.BASE_URL}contact/`}>
+    <a class="nav-cta" href={`${base}contact/`}>
       Let's talk <span aria-hidden="true">↗</span>
     </a>
   </div>

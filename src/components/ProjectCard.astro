@@ -1,17 +1,26 @@
+
 ---
 import type { Project } from '../data/projects';
 
 const { project } = Astro.props as { project: Project };
 const cover = project.media[0];
-const base = import.meta.env.BASE_URL;
+
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 
 const assetUrl = (src: string) => {
-  // Leave external URLs and embedded data URLs unchanged.
-  if (/^(https?:)?\/\//.test(src) || src.startsWith('data:')) {
+  if (/^(https?:)?\/\//i.test(src) || src.startsWith('data:') || src.startsWith('blob:')) {
     return src;
   }
 
-  return `${base}${src.replace(/^\/+/, '')}`;
+  const path = src.replace(/^\/+/, '');
+  const basePath = base.replace(/^\/+|\/+$/g, '');
+
+  if (basePath && (path === basePath || path.startsWith(`${basePath}/`))) {
+    return `/${path}`;
+  }
+
+  return `${base}${path}`;
 };
 ---
 

@@ -25,7 +25,7 @@ export type Project = {
   };
 };
 
-const base = '/';
+
 
 
 export const projects: Project[] = [
@@ -38,12 +38,12 @@ export const projects: Project[] = [
     features: ['Four-player local PvP competition with store selection.', 'Pick up and arrange goods to influence store appeal and customer ratings.', 'Customers choose stores and move through shopping interactions.', 'Compete for money, shop appeal and the best end-of-day rating.'],
     media: [
       { type: 'embed', src: "https://www.youtube.com/embed/3VRsVRNgOzQ?si=ZWLlTacLPgZx9iU-", alt: 'Risky Business Trailer', caption: '' },
-      { type: 'image', src: `${base}images/projects/risky-business/Group01_RiskyBusiness_06.png`, alt: 'Risky Business game cover', caption: '' },
-      { type: 'image', src: `${base}images/projects/risky-business/Group01_RiskyBusiness_09.png`, alt: 'Risky Business gameplay systems', caption: '' }
+      { type: 'image', src: `images/projects/risky-business/Group01_RiskyBusiness_06.png`, alt: 'Risky Business game cover', caption: '' },
+      { type: 'image', src: `images/projects/risky-business/Group01_RiskyBusiness_09.png`, alt: 'Risky Business gameplay systems', caption: '' }
       
     ],
     coverImage: {
-    src: `${base}images/projects/risky-business/Group01_RiskyBusiness_02.png`,
+    src: `images/projects/risky-business/Group01_RiskyBusiness_02.png`,
     alt: 'Risky Business cover',
     }
   },
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     demoUrl: 'https://karan-kalra1.github.io/Programming4/',
     media: [],
     coverImage: {
-    src: `${base}images/projects/digger/digger-cover.png`,
+    src: `images/projects/digger/digger-cover.png`,
     alt: 'Digger gameplay',
     }
   },
@@ -68,13 +68,13 @@ export const projects: Project[] = [
     repo: 'https://github.com/Howest-DAE/pd4-ep1-project-Karan-Kalra1', tech: ['Unity', 'C#', 'Netcode for GameObjects', 'Unity Gaming Services', 'PlayFab', 'ASP.NET Core', 'SQL Server', 'Entity Framework Core'],
     features: ['Online two-player sessions using Unity Sessions, Relay and Netcode for GameObjects.', 'Lobby creation/joining, team selection and ready states.', 'Networked movement, ball pickup, aiming, throwing and hit detection.', 'Server-authoritative hit validation and score updates.', 'PlayFab login, player display names and Gold virtual currency.', 'Custom ASP.NET Core REST API with Entity Framework Core and SQL Server/Azure SQL.', 'Match-specific crowns, synchronized match timer and final match statistics.'],
     media: [
-      { type: 'gif', src: `${base}images/projects/dodgeball/end.gif`, alt: 'Multiplayer Dodgeball match gameplay', caption: '' },
-      { type: 'gif', src: `${base}images/projects/dodgeball/getball.gif`, alt: 'Multiplayer Dodgeball match gameplay', caption: '' },
-     { type: 'gif', src: `${base}images/projects/dodgeball/ready.gif`, alt: 'Multiplayer Dodgeball match gameplay', caption: '' },
-     { type: 'gif', src: `${base}images/projects/dodgeball/login.gif`, alt: 'Multiplayer Dodgeball match gameplay', caption: '' }
+      { type: 'gif', src: `images/projects/dodgeball/end.gif`, alt: 'Multiplayer Dodgeball match gameplay', caption: '' },
+      { type: 'gif', src: `images/projects/dodgeball/getball.gif`, alt: 'Multiplayer Dodgeball match gameplay', caption: '' },
+     { type: 'gif', src: `images/projects/dodgeball/ready.gif`, alt: 'Multiplayer Dodgeball match gameplay', caption: '' },
+     { type: 'gif', src: `images/projects/dodgeball/login.gif`, alt: 'Multiplayer Dodgeball match gameplay', caption: '' }
     ],
     coverImage: {
-    src: `${base}images/projects/dodgeball/getball.gif`,
+    src: `images/projects/dodgeball/getball.gif`,
     alt: 'dodgeball',
     }
   },
@@ -85,13 +85,13 @@ export const projects: Project[] = [
     repo: 'https://github.com/Karan-Kalra1/Dual-Rasterizer', tech: ['C++', 'DirectX 11', 'HLSL', 'Multithreading', 'Rasterization', 'Normal Mapping'],
     features: ['Switch between software and DirectX 11 hardware rendering at runtime.', 'Software triangle rasterization with depth buffer and perspective-correct interpolation.', 'Multithreaded tile / bounding-box rasterization with early depth and back-face culling.', 'Lambert, Phong/Blinn-Phong and tangent-space normal mapping.', 'Hardware shaders support diffuse, specular, glossiness and normal maps.', 'Debug views for depth buffer, bounding boxes, culling modes and FPS.'],
     media: [
-      { type: 'gif', src: `${base}images/projects/dual-rasterizer/DualRasterizer.gif`, alt: 'Switching between rasterizer implementations', caption: '' },
-      { type: 'image', src: `${base}images/projects/dual-rasterizer/DualRasterizer_Software.png`, alt: 'DirectX hardware rasterizer output', caption: '' },
-      { type: 'image', src: `${base}images/projects/dual-rasterizer/Normals.png`, alt: 'C++ software rasterizer output', caption: '' },
+      { type: 'gif', src: `images/projects/dual-rasterizer/DualRasterizer.gif`, alt: 'Switching between rasterizer implementations', caption: '' },
+      { type: 'image', src: `images/projects/dual-rasterizer/DualRasterizer_Software.png`, alt: 'DirectX hardware rasterizer output', caption: '' },
+      { type: 'image', src: `images/projects/dual-rasterizer/Normals.png`, alt: 'C++ software rasterizer output', caption: '' },
       
     ],
     coverImage: {
-    src: `${base}images/projects/dual-rasterizer/DualRasterizer.gif`,
+    src: `images/projects/dual-rasterizer/DualRasterizer.gif`,
     alt: 'Rasterizer',
     }
   },
@@ -102,11 +102,11 @@ export const projects: Project[] = [
     repo: 'https://github.com/Karan-Kalra1/Raytracer', tech: ['C++', 'Multithreading', 'BRDF', 'AABB', 'Phong / Blinn-Phong', 'Visual Studio'],
     features: ['Multithreaded pixel pipeline using C++ threads.', 'Lambertian diffuse and Phong / Blinn-Phong specular lighting.', 'Runtime shading views for combined lighting, observed area, radiance and BRDF components.', 'AABB slab-test acceleration to reject objects before expensive intersection checks.', 'Interactive camera with FOV, target tracking and keyboard/mouse movement.'],
     media: [
-      { type: 'gif', src: `${base}images/projects/raytracer/RayTracer.gif`, alt: 'Interactive ray tracer viewport', caption: '' },
-      { type: 'image', src: `${base}images/projects/raytracer/bunny.png`, alt: 'Ray tracer rendered scene', caption: '' } 
+      { type: 'gif', src: `images/projects/raytracer/RayTracer.gif`, alt: 'Interactive ray tracer viewport', caption: '' },
+      { type: 'image', src: `images/projects/raytracer/bunny.png`, alt: 'Ray tracer rendered scene', caption: '' } 
     ],
     coverImage: {
-    src: `${base}images/projects/raytracer/RayTracer.gif`,
+    src: `images/projects/raytracer/RayTracer.gif`,
     alt: 'raytracer',
     }
   },
@@ -118,12 +118,12 @@ export const projects: Project[] = [
     repo: 'https://github.com/DAE-GD-2025-2026/game-ai-project-Karan-Kalra1', tech: ['Unreal Engine 5', 'C++', 'A*', 'Steering Behaviors', 'Spatial Partitioning', 'ImGui'],
     features: ['Flocking with cohesion, separation and velocity matching, plus seek, flee, wander and evade.', 'Blended and priority steering systems with tunable behavior weights.', 'Spatial partitioning grid with debug overlays for cells, neighbors and agent counts.', 'Navmesh-derived graph with A* search and optional SSFA/Funnel path smoothing.', 'Interactive debug visualizations for nodes, portals, connections and final paths.', 'Graph-coloring assignment: color connected graphs without adjacent nodes sharing a color.'],
     media: [
-      { type: 'gif', src: `${base}images/projects/game-ai/Flocking.gif`, alt: 'Flocking and steering behavior simulation', caption: '' },
-      { type: 'gif', src: `${base}images/projects/game-ai/AStar.gif`, alt: 'Spatial partitioning visualization', caption: '' },
-      { type: 'gif', src: `${base}images/projects/game-ai/Navmesh.gif`, alt: 'Navmesh pathfinding debug view', caption: '' }
+      { type: 'gif', src: `images/projects/game-ai/Flocking.gif`, alt: 'Flocking and steering behavior simulation', caption: '' },
+      { type: 'gif', src: `images/projects/game-ai/AStar.gif`, alt: 'Spatial partitioning visualization', caption: '' },
+      { type: 'gif', src: `images/projects/game-ai/Navmesh.gif`, alt: 'Navmesh pathfinding debug view', caption: '' }
     ],
     coverImage: {
-    src: `${base}images/projects/game-ai/Flocking.gif`,
+    src: `images/projects/game-ai/Flocking.gif`,
     alt: 'Flocking',
     }
   },
@@ -134,12 +134,12 @@ export const projects: Project[] = [
     repo: 'https://github.com/DAE-GD-2025-2026/gameai-zombie-Karan-Kalra1', tech: ['Unreal Engine 5.6', 'C++', 'AI Perception', 'Behavior Trees', 'Blackboard', 'NavMesh'],
     features: [ 'AI Perception & Persistent Memory — to classify zombies, weapons, medkits, food, garbage and houses. Stores information so the AI can react to targets outside its field of view.','Behavior Tree & Blackboard Architecture — Separated decision-making into custom UBTTaskNode tasks and UBTService services.A world-state service periodically updates its decisions based on Blackboard Values.','Dynamic Survival Priorities — checks survivor’s condition and prioritize urgent needs, including healing with medkits, restoring stamina with food and finding weapons.','Combat & Threat Response — Custom attack and target-selection tasks for the survivor to engage known zombies when appropriately equipped. If attacked from outside the fov, an active scanning task searches for the attacker.','Navigation-Aware Fleeing — check for potential escape destinations instead of choosing a random direction. Navigation checks reject routes that initially lead toward zombies, helping the survivor move toward safer areas.','Memory-Guided Exploration — Uses remembered house locations and visit states to prioritize unexplored buildings. When no useful remembered destination exists, fallback exploration tasks select reachable points to keep the AI moving.','Stuck Detection & Movement Recovery — Detects unsuccessful movement and selects alternative destinations. Handle blocked fleeing by choosing a side-step, allowing the survivor to re-plan when enemies obstruct its path.','Inventory-Aware Item Handling — Custom pickup and consumption tasks handle failed collection attempts, and separate garbage cleanup from useful-item collection so garbage can be removed to free spawn locations.'],
     media: [
-      { type: 'gif', src: `${base}images/projects/zombie-ai/destroy.gif`, alt: 'Survivor AI exploring houses', caption: '' },
-      { type: 'gif', src: `${base}images/projects/zombie-ai/picking.gif`, alt: 'Survivor AI responding to zombie threats', caption: '' },
-      { type: 'gif', src: `${base}images/projects/zombie-ai/attack.gif`, alt: 'AI decision making and behavior tree', caption: '' }
+      { type: 'gif', src: `images/projects/zombie-ai/destroy.gif`, alt: 'Survivor AI exploring houses', caption: '' },
+      { type: 'gif', src: `images/projects/zombie-ai/picking.gif`, alt: 'Survivor AI responding to zombie threats', caption: '' },
+      { type: 'gif', src: `images/projects/zombie-ai/attack.gif`, alt: 'AI decision making and behavior tree', caption: '' }
     ],
     coverImage: {
-    src: `${base}images/projects/zombie-ai/attack.gif`,
+    src: `images/projects/zombie-ai/attack.gif`,
     alt: 'zombie AI',
     }
   },
@@ -151,14 +151,14 @@ export const projects: Project[] = [
     repo: 'https://github.com/Karan-Kalra1/Stress-Island', tech: ['Unreal Engine 5.6', 'C++', 'Blueprints', 'Data Assets', 'Inventory', 'Crafting'],
     features: ['Interdependent health, stamina, hunger and thirst systems.', 'Resource harvesting with different tool efficiencies.', 'Inventory UI to inspect, use and drop items.', 'Crafting recipes dynamically available based on current inventory.', 'Campfire cooking that improves food effects.', 'Enemy AI with pursuit behavior and resource rewards.', 'Data-driven item definitions, recipes and modular item-effect classes.'],
     media: [
-      { type: 'gif', src: `${base}images/projects/stress-island/makeaxe.gif`, alt: 'Stress Island survival gameplay', caption: '' },
-      { type: 'gif', src: `${base}images/projects/stress-island/chop.gif`, alt: 'Stress Island inventory and crafting UI', caption: '' },
-      { type: 'gif', src: `${base}images/projects/stress-island/makefire.gif`, alt: 'Stress Island crafting interface', caption: '' },
-      { type: 'gif', src: `${base}images/projects/stress-island/cook.gif`, alt: 'Stress Island crafting interface', caption: '' },
-      { type: 'gif', src: `${base}images/projects/stress-island/eat.gif`, alt: 'Stress Island crafting interface', caption: '' }
+      { type: 'gif', src: `images/projects/stress-island/makeaxe.gif`, alt: 'Stress Island survival gameplay', caption: '' },
+      { type: 'gif', src: `images/projects/stress-island/chop.gif`, alt: 'Stress Island inventory and crafting UI', caption: '' },
+      { type: 'gif', src: `images/projects/stress-island/makefire.gif`, alt: 'Stress Island crafting interface', caption: '' },
+      { type: 'gif', src: `images/projects/stress-island/cook.gif`, alt: 'Stress Island crafting interface', caption: '' },
+      { type: 'gif', src: `images/projects/stress-island/eat.gif`, alt: 'Stress Island crafting interface', caption: '' }
     ],
     coverImage: {
-    src: `${base}images/projects/stress-island/cover.png`,
+    src: `images/projects/stress-island/cover.png`,
     alt: 'Stress Island',
     }
   }

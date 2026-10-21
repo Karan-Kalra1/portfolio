@@ -1,13 +1,42 @@
 ---
+const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
-const links = [{ href: '/', label: 'Projects' }, { href: '/about/', label: 'About' }, { href: '/contact/', label: 'Contact' }];
+
+const links = [
+  { href: `${import.meta.env.BASE_URL}`, label: 'Projects' },
+  { href: `${import.meta.env.BASE_URL}about/`, label: 'About' },
+  { href: `${import.meta.env.BASE_URL}contact/`, label: 'Contact' },
+];
 ---
+
 <header class="site-header">
   <div class="nav-shell">
-    <a class="brand" href="/" aria-label="Karan home"><span class="brand-mark">K<span>.</span></span><span class="brand-name">Karan<span class="brand-dot">/</span>Portfolio</span></a>
+    <a class="brand" href={base} aria-label="Karan home">
+      <span class="brand-mark">K<span>.</span></span>
+      <span class="brand-name">Karan<span class="brand-dot">/</span>Portfolio</span>
+    </a>
+
     <nav aria-label="Main navigation">
-      {links.map((link) => <a href={link.href} class:list={['nav-link', { active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]} aria-current={currentPath === link.href ? 'page' : undefined}>{link.label}</a>)}
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'nav-link',
+            {
+              active:
+                currentPath === link.href ||
+                (link.href !== base && currentPath.startsWith(link.href)),
+            },
+          ]}
+          aria-current={currentPath === link.href ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
     </nav>
-    <a class="nav-cta" href="/contact/">Let's talk <span aria-hidden="true">↗</span></a>
+
+    <a class="nav-cta" href={`${import.meta.env.BASE_URL}contact/`}>
+      Let's talk <span aria-hidden="true">↗</span>
+    </a>
   </div>
 </header>

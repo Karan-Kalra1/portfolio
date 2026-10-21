@@ -1,7 +1,36 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { tools } from '../data/projects';
+
+const base = import.meta.env.BASE_URL;
 ---
+
 <MainLayout title="About — Karan Kalra">
-  <section class="content-page wrap"><a class="back-link" href="/">← Home</a><div class="eyebrow">A LITTLE ABOUT ME</div><h1>Joy, Whimsy and a bit of <span class="gradient-text">Bullshit</span></h1><p class="page-lede">I'm Karan Kalra, a game programming student who enjoys making and playing games.</p><div class="about-grid"><section class="about-panel"><div class="eyebrow">WHAT I ENJOY</div><h2>A little bit of Everything</h2><p>Playing games has been my biggest hobby since childhood and I have always been interested in puzzles and things that require logical reasoning. When professor Utonium accidently added C++ into the formula, an interest for making Video games was born. Since my teens, I have always had an interest in finding out how games are made and make games myself. </p><p>I enjoy all aspects of game development from gameplay programming, to engine work all the way into graphics programming, but if I were to pick one I enjoy gameplay programming the most so I can visually see my work come to life.</p></section><section class="about-panel"><div class="eyebrow">CURRENT TOOLKIT</div><div class="tools-grid about-tools">{tools.map((tool) => <span class="tool-chip">{tool}</span>)}</div><div class="cv-slot"><h3>CV / Résumé</h3><a class="button button-secondary" href="/cv.pdf">View CV ↗</a></div></section></div></section>
+  <section class="content-page wrap">
+    <a class="back-link" href={base}>← Home</a>
+    <div class="eyebrow">A LITTLE ABOUT ME</div>
+    <h1>Joy, Whimsy and a bit of <span class="gradient-text">Bullshit</span></h1>
+    <p class="page-lede">I'm Karan Kalra, a game programming student who enjoys making and playing games.</p>
+
+    <div class="about-grid">
+      <section class="about-panel">
+        <div class="eyebrow">WHAT I ENJOY</div>
+        <h2>A little bit of Everything</h2>
+        <p>Playing games has been my biggest hobby since childhood and I have always been interested in puzzles and things that require logical reasoning. When professor Utonium accidently added C++ into the formula, an interest for making Video games was born. Since my teens, I have always had an interest in finding out how games are made and make games myself.</p>
+        <p>I enjoy all aspects of game development from gameplay programming, to engine work all the way into graphics programming, but if I were to pick one I enjoy gameplay programming the most so I can visually see my work come to life.</p>
+      </section>
+
+      <section class="about-panel">
+        <div class="eyebrow">CURRENT TOOLKIT</div>
+        <div class="tools-grid about-tools">
+          {tools.map((tool) => <span class="tool-chip">{tool}</span>)}
+        </div>
+
+        <div class="cv-slot">
+          <h3>CV / Résumé</h3>
+          <a class="button button-secondary" href={`${base}cv.pdf`}>View CV ↗</a>
+        </div>
+      </section>
+    </div>
+  </section>
 </MainLayout>

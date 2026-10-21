@@ -1,23 +1,32 @@
-
 ---
 import type { Project } from '../data/projects';
 
 const { project } = Astro.props as { project: Project };
 const cover = project.media[0];
+const base = import.meta.env.BASE_URL;
+
+const assetUrl = (src: string) => {
+  // Leave external URLs and embedded data URLs unchanged.
+  if (/^(https?:)?\/\//.test(src) || src.startsWith('data:')) {
+    return src;
+  }
+
+  return `${base}${src.replace(/^\/+/, '')}`;
+};
 ---
 
-<a class="project-card" href={`/projects/${project.slug}`}>
+<a class="project-card" href={`${base}projects/${project.slug}/`}>
   <div class="project-card-media">
     {project.coverImage ? (
       <img
-        src={project.coverImage.src}
+        src={assetUrl(project.coverImage.src)}
         alt={project.coverImage.alt}
         loading="lazy"
       />
     ) : cover ? (
       cover.type === 'video' ? (
         <video
-          src={cover.src}
+          src={assetUrl(cover.src)}
           muted
           autoplay
           loop
@@ -29,7 +38,11 @@ const cover = project.media[0];
           <small>Interactive media</small>
         </div>
       ) : (
-        <img src={cover.src} alt={cover.alt} loading="lazy" />
+        <img
+          src={assetUrl(cover.src)}
+          alt={cover.alt}
+          loading="lazy"
+        />
       )
     ) : (
       <div class="media-fallback">

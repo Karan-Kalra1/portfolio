@@ -1,6 +1,34 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
+
 <MainLayout title="Contact — Karan Kalra">
-  <section class="content-page wrap contact-page"><a class="back-link" href="/">← Home</a><div class="eyebrow">LET'S CONNECT</div><h1>Wanna have a chat<span class="gradient-text">?</span></h1><p class="page-lede">For opportunities, collaboration or just a chat about game programming, Hit me up!</p><div class="contact-links"><a href="https://github.com/Karan-Kalra1" target="_blank" rel="noreferrer"><span class="contact-label">GITHUB</span><strong>Karan-Kalra1</strong><span class="contact-arrow">↗</span></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><span class="contact-label">LINKEDIN</span><strong>Find me on LinkedIn</strong><span class="contact-arrow">↗</span></a><a href="mailto:karankalra07092002@gmail.com"><span class="contact-label">EMAIL</span><strong>karankalra07092002@gmail.com</strong><span class="contact-arrow">↗</span></a></div></section>
+  <section class="content-page wrap contact-page">
+    <a class="back-link" href={base}>← Home</a>
+    <div class="eyebrow">LET'S CONNECT</div>
+    <h1>Wanna have a chat<span class="gradient-text">?</span></h1>
+    <p class="page-lede">For opportunities, collaboration or just a chat about game programming, Hit me up!</p>
+
+    <div class="contact-links">
+      <a href="https://github.com/Karan-Kalra1" target="_blank" rel="noreferrer">
+        <span class="contact-label">GITHUB</span>
+        <strong>Karan-Kalra1</strong>
+        <span class="contact-arrow">↗</span>
+      </a>
+
+      <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+        <span class="contact-label">LINKEDIN</span>
+        <strong>Find me on LinkedIn</strong>
+        <span class="contact-arrow">↗</span>
+      </a>
+
+      <a href="mailto:karankalra07092002@gmail.com">
+        <span class="contact-label">EMAIL</span>
+        <strong>karankalra07092002@gmail.com</strong>
+        <span class="contact-arrow">↗</span>
+      </a>
+    </div>
+  </section>
 </MainLayout>
